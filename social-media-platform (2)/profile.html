@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | ConnectHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="timeline.html">ConnectHub</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="globalSearchInput" placeholder="Search users...">
+        <button id="globalSearchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="timeline.html"><i class="fas fa-home"></i></a></li>
+          <li><a href="friends.html"><i class="fas fa-user-friends"></i></a></li>
+          <li class="notifications-dropdown">
+            <a href="#" id="notificationsDropdown">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge" id="notificationBadge"></span>
+            </a>
+            <div class="dropdown-menu notifications-menu" id="notificationsMenu">
+              <div class="notifications-header">
+                <h3>Friend Requests</h3>
+              </div>
+              <div class="notifications-list" id="notificationsList">
+                <!-- Friend requests will be dynamically added here -->
+                <div class="no-notifications">No friend requests</div>
+              </div>
+            </div>
+          </li>
+          <li class="profile-dropdown">
+            <a href="#" id="profileDropdown"><img src="images/default-avatar.png" alt="Profile" class="avatar-small" id="navProfilePic"></a>
+            <div class="dropdown-menu" id="profileMenu">
+              <a href="profile.html">My Profile</a>
+              <a href="#" id="logoutBtn">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar left-sidebar">
+      <div class="user-profile">
+        <img src="images/default-avatar.png" alt="User Profile" class="avatar-medium" id="sidebarProfilePic">
+        <h3 id="userFullName">User Name</h3>
+      </div>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="profile.html" class="active"><i class="fas fa-user"></i> My Profile</a></li>
+          <li><a href="friends.html"><i class="fas fa-user-friends"></i> Friends</a></li>
+          <li><a href="timeline.html"><i class="fas fa-home"></i> Timeline</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="profile-container">
+        <div class="profile-header">
+          <div class="profile-cover">
+            <div class="profile-avatar-container">
+              <img src="images/default-avatar.png" alt="Profile" class="avatar-large" id="profilePagePic">
+              <div class="change-avatar-btn">
+                <label for="profilePicInput">
+                  <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+              </div>
+            </div>
+          </div>
+          <div class="profile-info">
+            <h1 id="profileName">User Name</h1>
+          </div>
+        </div>
+
+        <div class="profile-tabs">
+          <button class="tab-btn active" data-tab="about">About</button>
+          <button class="tab-btn" data-tab="posts">Posts</button>
+          <button class="tab-btn" data-tab="friends">Friends</button>
+        </div>
+
+        <div class="tab-content" id="about">
+          <div class="profile-edit-form">
+            <h2>Edit Profile</h2>
+            <form id="profileEditForm">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName">
+              </div>
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location">
+              </div>
+              <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="user-info-display">
+            <h2>Profile Information</h2>
+            <div class="info-item">
+              <strong>Bio:</strong>
+              <p class="user-bio">No bio added yet</p>
+            </div>
+            <div class="info-item">
+              <strong>Location:</strong>
+              <p class="user-location">No location added yet</p>
+            </div>
+            <div class="info-item">
+              <strong>Birthday:</strong>
+              <p class="user-birthday">No birthday added yet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content hidden" id="posts">
+          <div class="user-posts" id="userPostsContainer">
+            <!-- User posts will be loaded here -->
+          </div>
+        </div>
+
+        <div class="tab-content hidden" id="friends">
+          <div class="profile-friends-grid" id="profileFriendsGrid">
+            <!-- User friends will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/profile.js"></script>
+</body>
+</html>

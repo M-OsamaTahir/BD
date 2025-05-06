@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends | ConnectHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="timeline.html">ConnectHub</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="globalSearchInput" placeholder="Search users...">
+        <button id="globalSearchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="timeline.html"><i class="fas fa-home"></i></a></li>
+          <li><a href="friends.html" class="active"><i class="fas fa-user-friends"></i></a></li>
+          <li class="notifications-dropdown">
+            <a href="#" id="notificationsDropdown">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge" id="notificationBadge"></span>
+            </a>
+            <div class="dropdown-menu notifications-menu" id="notificationsMenu">
+              <div class="notifications-header">
+                <h3>Friend Requests</h3>
+              </div>
+              <div class="notifications-list" id="notificationsList">
+                <!-- Friend requests will be dynamically added here -->
+                <div class="no-notifications">No friend requests</div>
+              </div>
+            </div>
+          </li>
+          <li class="profile-dropdown">
+            <a href="#" id="profileDropdown"><img src="images/default-avatar.png" alt="Profile" class="avatar-small" id="navProfilePic"></a>
+            <div class="dropdown-menu" id="profileMenu">
+              <a href="profile.html">My Profile</a>
+              <a href="#" id="logoutBtn">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar left-sidebar">
+      <div class="user-profile">
+        <img src="images/default-avatar.png" alt="User Profile" class="avatar-medium" id="sidebarProfilePic">
+        <h3 id="userFullName">User Name</h3>
+      </div>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+          <li><a href="friends.html" class="active"><i class="fas fa-user-friends"></i> Friends</a></li>
+          <li><a href="timeline.html"><i class="fas fa-home"></i> Timeline</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="friends-tabs">
+        <button class="tab-btn active" data-tab="all-friends">My Friends</button>
+        <button class="tab-btn" data-tab="friend-requests">Friend Requests</button>
+        <button class="tab-btn" data-tab="find-friends">Find Friends</button>
+        <button class="tab-btn" data-tab="all-users">All Users</button>
+      </div>
+
+      <div class="tab-content" id="all-friends">
+        <div class="friends-grid" id="friendsGrid">
+          <!-- Friends will be dynamically added here -->
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="friend-requests">
+        <div class="friend-requests-list" id="friendRequestsList">
+          <!-- Friend requests will be dynamically added here -->
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="find-friends">
+        <div class="search-people">
+          <input type="text" id="searchPeople" placeholder="Search for people by name...">
+          <button id="searchPeopleBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="people-grid" id="peopleGrid">
+          <!-- People will be dynamically added here -->
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="all-users">
+        <div class="search-people">
+          <input type="text" id="filterAllUsers" placeholder="Filter users...">
+          <button id="filterAllUsersBtn"><i class="fas fa-filter"></i></button>
+        </div>
+        <div class="people-grid" id="allUsersGrid">
+          <!-- All users will be dynamically added here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/friends.js"></script>
+</body>
+</html>

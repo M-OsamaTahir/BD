@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | ConnectHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-container">
+      <div class="auth-form-container">
+        <h1>Login to ConnectHub</h1>
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </div>
+          <p class="auth-redirect">Don't have an account? <a href="signup.html">Sign up</a></p>
+          <p class="dummy-login-help">
+            <small>
+              <strong>Tip:</strong> You can log in with any of the dummy users. 
+              Try <code>james.smith42@example.com</code> with password <code>password123</code>
+            </small>
+          </p>
+        </form>
+      </div>
+      <div class="auth-image">
+        <img src="images/login-illustration.svg" alt="Login Illustration">
+      </div>
+    </div>
+  </div>
+  <script src="scripts/dummy-data.js"></script>
+  <script src="scripts/auth.js"></script>
+</body>
+</html>
